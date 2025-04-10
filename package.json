@@ -4,7 +4,8 @@
   "description": "Projeto query Builder RocketSeat",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "knex": "node --import tsx ./node_modules/.bin/knex"
   },
   "author": "Luiz Garbini Neto",
   "license": "ISC",
