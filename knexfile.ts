@@ -3,6 +3,13 @@ export default {
 	connection: {
 		filename: "./src/database/database.db",
 	},
+	pool: {
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		afterCreate: (connection: any, done: any) => {
+			connection.run("PRAGMA foreign_keys = ON");
+			done();
+		},
+	},
 	useNullAsDefault: true,
 	migrations: {
 		extensios: "ts",
